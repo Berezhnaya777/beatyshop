@@ -1,0 +1,229 @@
+/**HEADER*/
+.main-header{
+  background-image: linear-gradient(to right, @purple, @pink);
+}
+
+/**NAVIGATION**/
+.main-nav{
+  width: 100%;
+}
+
+.main-nav__wrapper{
+  display: flex;
+  flex-direction: column;
+
+  min-width: 320px;
+  @media (min-width: @tablet-width){
+    flex-direction: row;
+    justify-content: space-around;
+
+    min-width: 768px;
+    margin: 0 auto;
+  }
+  @media (min-width: @desktop-width){
+    justify-content: space-between;
+
+    max-width: 1170px;
+  }
+}
+
+.main-nav__toggle{
+  position: absolute;
+  top: 7px;
+  right: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 50px;
+
+  background-color: transparent;
+
+  cursor: pointer;
+  border: none;
+  @media (min-width: @tablet-width){
+    .hide-block();
+  }
+}
+
+.button1, .button2, .button3 {
+  width: 35px;
+  height: 5px;
+  background-color: @white;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.change .button1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .button2 {opacity: 0;}
+
+.change .button3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+@media(max-width: @mobile-width-only){
+  .main-nav--closed {
+    .site__list{
+      .hide-block();
+    }
+    .site__list--item{
+      &.active{
+        background-color: @darkpurple;
+      }
+    }
+  }
+
+  .main-nav--nojs .main-nav__toggle{
+    display: none;
+  }
+
+  .main-nav--nojs .site__list--item{
+    display: block;
+  }
+}
+
+.site__list{
+  .reset-list();
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: @tablet-width){
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.main-nav--opened .site__list{
+  border-top: 1px solid @darkpurple;
+  border-bottom: 1px solid @white;
+  @media (min-width: @tablet-width){
+    border: none;
+  }
+}
+
+.main-nav__logo{
+  padding: 10px 0;
+  font-size: 36px;
+  line-height: 46px;
+  font-family: @font_GilroyBold;
+  color: @white;
+  text-align: center;
+  transition: color .2s ease-in-out;
+  &:hover,
+  &:focus{
+    color: @brightpurple;
+    outline: none;
+  }
+  &:active{
+    color: @darkpurple;
+  }
+  @media (min-width: @tablet-width){
+    padding: 4px 0;
+  }
+}
+
+.site__list--item a{
+  display: block;
+  padding: 12px 21px;
+  border-top: 13px;
+
+  font-size: 18px;
+  line-height: 24px;
+  font-family: @font_GilroyBold;
+  color: @white;
+
+  background:linear-gradient(@brightpurple, @brightpurple) 50% 100% no-repeat;
+	background-size:0 2px;
+  border-top: 1px solid @white;
+  border-bottom: 1px solid @darkpurple;
+	transition: background .3s ease-in-out;
+  text-decoration:none;
+  @media (min-width: @tablet-width){
+    padding: 12px 0px;
+    border: none;
+  }
+  @media (min-width: @desktop-width){
+    padding: 15px 31px;
+  }
+}
+
+.site__list--item{
+  @media (min-width: @tablet-width){
+    margin-right: 50px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  @media (min-width: @desktop-width){
+    margin-right: 0;
+  }
+}
+
+.site__list--item a[href]{
+  &:hover,
+  &:focus{
+  	background: @purple;
+    border-color: @purple;
+    outline: none;
+    @media (min-width: @tablet-width){
+      background: transparent;
+      color: @brightpurple;
+    }
+    @media (min-width: @desktop-width){
+      background: @white;
+      color: @brightpurple;
+    }
+  }
+  &:active{
+    background: @darkpurple;
+    border-color: @darkpurple;
+    @media (min-width: @tablet-width){
+      background: transparent;
+      color: @darkpurple;
+    }
+    @media (min-width: @desktop-width){
+      background: @white;
+      color: @darkpurple;
+    }
+  }
+}
+
+.site__list--item{
+  &.active{
+    @media (min-width: @tablet-width){
+      position: relative;
+
+      &::after{
+        content: '';
+
+        position: absolute;
+        right: 0;
+        bottom: -6px;
+        left: 0;
+
+        height: 3px;
+
+        background-color: @darkpurple;
+      }
+    }
+    @media (min-width: @desktop-width){
+      &::after{
+        right: 30px;
+        left: 30px;
+        bottom: -3px;
+      }
+    }
+  }
+}
+/**NAVIGATION END**/
+/**HEADER END**/

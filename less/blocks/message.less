@@ -1,0 +1,61 @@
+/**MESSAGE**/
+.message{
+  padding-top: 35px;
+  padding-bottom: 35px;
+  @media (min-width: @tablet-width){
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.message__form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  @media (min-width: 580px){
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.message input[type="text"],
+.message input[type="email"]{
+  box-sizing: border-box;
+  padding: 14px 0 14px 20px;
+  width: 280px;
+
+  font-size: 16px;
+  line-height: 18px;
+
+  border: 1px solid #4c4c4c;
+  border-radius: 60px;
+  @media (min-width: 580px){
+    width: 240px;
+    margin-right: 30px;
+  }
+  @media (min-width: @tablet-width){
+    margin-right: 55px;
+  }
+  &:hover,
+  &:focus{
+    border-color: @pink;
+    outline: none;
+  }
+}
+
+.message .button{
+  width: 280px;
+  padding-top: 14px;
+  @media (min-width: @tablet-width){
+    width: 200px;
+  }
+}
+
+.message input[type="text"].error,
+.message input[type="email"].error{
+  border: 1px solid #a92459;
+  box-shadow: 0 0 10px #a92459;
+}
+/**MESSAGE END**/

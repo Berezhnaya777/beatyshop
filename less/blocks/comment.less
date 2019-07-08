@@ -1,0 +1,82 @@
+/**COMMENTS**/
+.comments{
+  padding-top: 35px;
+  padding-bottom: 50px;
+
+  background-color: @lilak;
+  .responsive();
+  @media (min-width: @tablet-width){
+    padding-top: 75px;
+  }
+  .slick-initialized .slick-slide{
+    display: flex;
+  }
+  .slick-slide img{
+    .hide-block();
+    @media (min-width: @tablet-width){
+      display: block;
+      width: ~'calc(50vw - 100px)';
+    }
+    @media (min-width: @desktop-width){
+      width: auto;
+    }
+  }
+  .slick-dots{
+    bottom: -50px;
+  }
+}
+
+.comment__list{
+  display: flex;
+}
+
+.comment__list--item{
+  display: flex;
+  justify-content: space-around;
+}
+
+.comment__img{
+  .hide-block();
+  @media (min-width: @tablet-width){
+    display: block;
+    width: ~'calc(50vw - 100px)';
+  }
+  @media (min-width: @desktop-width){
+    width: auto;
+  }
+}
+
+.comment__info{
+  width: 470px;
+  padding-left: 0;
+  @media (min-width: @tablet-width){
+    padding-left: 40px;
+  }
+}
+
+.comment__text{
+  margin: 0;
+}
+
+.comment__content{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  
+  font-size: 18px;
+  line-height: 20px;
+  font-family: @font_GilroySB;
+  color: @lightpink;
+}
+
+.customer__initial{
+  margin: 0;
+  margin-top: 15px;
+  font-family: @font_GilroyBold;
+}
+
+.customer__position{
+  margin: 0;
+  color: @lightgray;
+}
+/**COMMENTS END**/

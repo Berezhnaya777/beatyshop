@@ -1,0 +1,122 @@
+.button{
+  position: relative;
+  width: 200px;
+  padding: 14px 0;
+  font-size: 18px;
+  line-height: 20px;
+  color: @white;
+
+  background-image: linear-gradient(to right, @purple, @pink);
+  border: none;
+  border-radius: 60px;
+
+  z-index: 1;
+
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  &::before,
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 60px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .7s ease-in-out;
+  }
+  &::before{
+    background-color: @purple;
+  }
+  &::after{
+    background-color: @purple;
+  }
+  &:hover::before,
+  &:focus::before{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  &:active::after{
+    transform: scaleX(1);
+    transform-origin: left;
+    background-color: @pink;
+  }
+}
+
+.modal__button{
+  width: 240px;
+  modal: 20px;
+}
+
+.button-download{
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  padding: 10px 0;
+  padding-right: 10px;
+
+  font-size: 18px;
+  line-height: 20px;
+  font-family: @font_Gilroy;
+  color: @darkgray;
+  text-align: center;
+
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  &::before,
+  &::after{
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: 0.5s ease-in-out;
+  }
+  &::before{
+    right: 0;
+    border: 2px solid @purple;
+    border-left: 0;
+    border-right: 0;
+  }
+  &::after{
+    height: 120%;
+    left: 0;
+    background-color: @purple;
+  }
+  &:hover::before,
+  &:focus::before,
+  &:hover::after,
+  &:focus::after{
+    width: 100%;
+    outline: none;
+  }
+  &:active::before,
+  &:active::after{
+    width: 100%;
+    background-color: @lightpink;
+    outline: none;
+  }
+}
+
+.button__icon--download{
+  content: "";
+
+  width: 25px;
+  height: 25px;
+
+  position: absolute;
+  right: 0;
+  top: 10px;
+
+  background-image: url("../img/icon/download.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}

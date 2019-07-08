@@ -1,0 +1,56 @@
+.reset-list(){
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.hide-block(){
+  display: none;
+}
+
+.responsive(){
+  .slick-arrow{
+    position: relative;
+
+    width: 20px;
+    height: 25px;
+
+    cursor: pointer;
+    @media (min-width: @tablet-width){
+      top: 82px;
+      left: -10px;
+    }
+    @media (min-width: @desktop-width){
+      top: 95px;
+      left: -10px;
+    }
+  }
+
+  .slick-arrow.slick-disabled{
+    opacity: 0.2;
+  }
+
+  .slick-dots li button{
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border: 1px solid @pink;
+    border-radius: 50%;
+    background-color: @white;
+
+    cursor: pointer;
+  }
+
+  .slick-dots li button:before{
+    color: transparent;
+  }
+
+  .slick-dots li.slick-active button:before{
+    width: 11px;
+    height: 11px;
+    background-color: @pink;
+    border-radius: 50%;
+    color: transparent;
+  }
+}

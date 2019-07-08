@@ -1,0 +1,28 @@
+/**FOOTER**/
+.main__footer{
+  background-color: @gray;
+}
+
+.footer-site__list{
+  .hide-block();
+  @media (min-width: @tablet-width){
+    display: flex;
+  }
+}
+
+.footer-site__list .site__list--item{
+  &.active{
+    @media (min-width: @tablet-width){
+      &::after{
+        top: -3px;
+      }
+    }
+    @media (min-width: @desktop-width){
+      &::after{
+        top: 0px;
+      }
+    }
+  }
+}
+
+/**FOOTER END**/
